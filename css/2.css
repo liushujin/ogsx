@@ -1,0 +1,200 @@
+/*-----------背景--------------*/
+html,body{
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+}
+.main{
+	width: 100%;
+	height: 100%;
+	background: url(../images/bigbg.jpg) 0 0 no-repeat;
+}
+.logo{
+	width: 343px;
+	height: 177px;
+	background: url(../images/logo.png) 0 0 no-repeat;
+	margin-left: 20px;
+}
+/*----------首页--------------*/
+.wenzi{
+	width: 512px;
+	height: 344px;
+	display: block;
+	margin: 55px auto;
+}
+.dianji{
+	width: 512px;
+	height: 69px;
+	margin: 5px auto;
+	position: relative;
+}
+/*.dianji img{
+	width: 512px;
+	height: 69px;
+}*/
+.dianji p,.dianji input,.p1 span{
+	width: 512px;
+	height: 69px;
+	position: absolute;
+	left: 12px;
+	top: 12px;
+	font-size: 3em;
+	font-style: italic;
+	font-weight: bolder;
+	color: #fff;
+	text-align: center;
+}
+.dianji input{
+	width: 512px;
+	height: 69px;
+	left: 10px;
+	top: 0px;
+	text-align: center;
+	border: 0;
+	background: transparent;
+}
+.dianji2{
+	margin-top: 15px;
+}
+/*----------怒放试驾页---------*/
+.Three_wz{
+	height: 164px;
+	
+}
+.Three_wz2{
+	height: 63px;
+	margin-top: 2px;
+	margin-bottom: 10px;
+}
+.dianji3{
+	margin-top: 2px;
+}
+.dianji3 .p1{
+	float: left;
+}
+.dianji3 .p2{
+	float: right;
+}
+.p1 span{
+	width: 256px;
+	height: 52px;
+	left: 0px;
+	font-size: 2.1em;
+}
+.p1{
+	width: 256px;
+	height: 52px;
+}
+.p2 span{
+	left: 260px;
+}
+/*------------------分享页-----------------*/
+.fenx{
+	width: 137px;
+	height: 244px;
+	position: absolute;
+	right: 25px;
+	top: 10px;
+	background:url(../images/9.png) 0 0 no-repeat;
+}
+/*----------------获奖名单----------------------*/
+.success{
+	display: block;
+	width: 231px;
+	height: 58px;
+	margin: 0px auto;
+}
+.table{
+	width: 512px;
+	height: 560px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.table ul{
+	width: 512px;
+	height: 45px;
+	color: #fff;
+	font-size: 3em;
+	border-top: 1px solid #fff;
+	text-align: center;
+	margin-top: 6px;
+	padding-top: 6px;
+	overflow: hidden;
+	padding-left: 8px;
+	font-style: italic;
+}
+ul li{
+	width: 159px;
+	float: left;
+}
+#outer{
+	width: 512px;
+	height: 500px;
+	overflow: hidden;
+}
+#append{
+	width: 512px;
+	height: 10000px;
+}
+#list{
+	width: 512px;
+	height: 45px;
+	font-size: 2.3em;
+	color: #fff;
+	list-style: none;
+	margin-top: 4px;
+	border-top: 0px solid #fff;
+}
+#list li{
+	overflow: hidden;
+	font-style: italic;
+	line-height: 200%;
+}
+#list li em{
+	font-style: italic;
+	font-size: 1.4em;
+}
+#list li:nth-child(1){
+	width: 95px;
+	font-size: 1.1em;
+	float: left;
+	line-height: 45px;
+}
+#list li:nth-child(2){
+	text-align: left;
+	width: 90px;
+	float: left;
+	margin-left: 10px;
+}
+#list li:nth-child(3){
+	width: 120px;
+	float: right;
+	margin-right: 23px;
+}
+#list li:nth-child(4){
+	float: right;
+}
+/*--------------------滚动----------------------*/
+#move{
+	width: 512px;
+	height: 50px;
+	margin: 2px auto;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	overflow: hidden;
+}
+#move span{
+	display: block;
+	width: 215px;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	color: #fff;
+	font-size: 3em;
+	text-align: right;
+	cursor: pointer;
+}
+#move #right{
+	float: right;
+	text-align: left;
+}

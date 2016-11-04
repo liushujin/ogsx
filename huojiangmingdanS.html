@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=0.5,user-scalable=no" />
+		<title>获奖名单</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/2.css" />
+		<script src="js/scale.js"></script>
+		<script src="js/angular.min.js"></script>
+	</head>
+	<body>
+		<div class="main" ng-controller="ctrl">
+			<div class="logo"></div>
+			<img src="images/1.png" alt="" class="success"/>
+			<div class="table">
+				<ul>
+					<li>姓名</li>
+					<li>电话</li>
+					<li>奖品</li>
+				</ul>
+				<div id="outer">
+					<div id="append">
+						<ul id="list" ng-repeat="i in mindan">
+							<li><em>{{($index+1<10)?"0"+($index+1):($index+1);}}</em>期</li>
+							<li>{{i.name}}</li>
+							<li>{{i.gift}}</li>
+							<li>{{i.tele=i.tele.replace(i.tele.slice(4,7),"***")}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="move">
+				<span id="left">&lt;上一页</span>
+				<span id="right">下一页&gt;</span>
+			</div>
+			<div class="dianji dianji2">
+				<img src="images/8.png" alt="" />
+				<p style="margin: 0;font-size: 2.3em;">
+					<a href="shijiashouye.html" style="color: #fff;">马上参与抽奖 开启欧洲之旅&nbsp;&gt;</a>
+				</p>
+			</div>
+		</div>
+	</body>
+	<script>
+		var app=angular.module("app",[]);
+		app.controller("ctrl",function($scope,$http){
+			$scope.mindan=null;
+			$http({
+				url:"data/data.json",
+				method:"get"
+			}).success(function(d){
+				$scope.mindan=d.data;
+			})
+		})
+		
+		var right=document.getElementById("right");
+		var left=document.getElementById("left");
+		var outer=document.getElementById("outer");
+		right.onclick=function(){
+			outer.scrollTop+=500;
+		}
+		left.onclick=function(){
+			outer.scrollTop-=500;
+		}	
+	</script>
+</html>

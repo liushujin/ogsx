@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=0.5,user-scalable=no" />
+		<title>获奖名单</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/nufangshijia.css" />
+		<script src="js/scale.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="logo"></div>
+			<img src="images/1.png" alt="" class="success"/>
+			<div class="table">
+				<ul>
+					<li>姓名</li>
+					<li>电话</li>
+					<li>奖品</li>
+				</ul>
+				<div id="append">
+					<ul id="list">
+					<!--<li>span</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>-->
+					</ul>
+				</div>
+			</div>
+			<div id="move">
+				<span id="left">&lt;上一页</span>
+				<span id="right">下一页&gt;</span>
+			</div>
+			<div class="dianji dianji2">
+				<img src="images/8.png" alt="" />
+				<p style="margin: 0%;font-size: 2.3em;">
+					<a href="shijiashouye.html" style="color: #fff;">马上参与抽奖 开启欧洲之旅&nbsp;&gt;</a>
+				</p>
+			</div>
+		</div>
+	</body>
+	<script>
+		var lis=document.createElement("li");
+		var list=document.getElementById("list");
+		var li=list.getElementsByTagName("li");
+		var left=document.getElementById("left");
+		var append=document.getElementById("append");
+		var xhr=new XMLHttpRequest();
+		xhr.open("get","data/data.json?t"+new Date().getTime(),true);
+		xhr.send();
+		xhr.onreadystatechange=function (){
+			if (xhr.readyState==4) {
+				if (xhr.status==200) {
+					var str=xhr.responseText;
+					var obj=eval('('+str+')');
+					for (var i=0;i<=obj.data.length-1;i++) {
+						var oli=document.createElement("li");
+						if(i<9){
+							var bb="<span>"+"<em>"+'0'+(i+1)+"</em>"+"期"+"</span>";
+						}else{
+							var bb="<span>"+"<em>"+(i+1)+"</em>"+"期"+"</span>";
+						}
+						var cc=obj.data[i].tele;
+						var reg=cc.slice(4,7);
+						cc=cc.replace(reg,"***");
+						var aa=bb+"<span>"+obj.data[i].name+"</span>"+"<span>"+obj.data[i].gift+"</span>"+"<span>"+cc+"</span>";
+						oli.innerHTML+=aa;
+						list.appendChild(oli);
+					}
+				}else{
+					alert("响应失败");
+				};
+			};
+		}			
+		var right=document.getElementById("right");
+		var left=document.getElementById("left");
+		right.onclick=function(){
+			append.scrollTop+=500;
+		}
+		left.onclick=function(){
+			append.scrollTop-=500;
+		}	
+	</script>
+</html>
